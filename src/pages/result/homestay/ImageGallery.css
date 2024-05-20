@@ -1,0 +1,134 @@
+.hs-main{ 
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item {
+    position: relative;
+    border: 1px solid grey;
+    min-height: 20vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.gal-container {
+    display: grid;
+    grid-template-columns: 50vw 20vw 20vw;
+    gap: 10px;
+}
+
+.item-1 {
+    border-radius: 30px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.item-2 {
+    grid-column-start: 2;
+    border-radius: 30px;
+    grid-column-end: 4;
+}
+
+.item-3 {
+border-radius: 30px;
+}
+.gray-background {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.item-4 {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 30px;
+    position: relative;
+    display: flex; /* Sử dụng flexbox */
+    align-items: center; /* Căn dọc giữa */
+    justify-content: center; /* Căn ngang giữa */
+}
+
+.item-4 {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    display: flex; /* Sử dụng flexbox */
+    align-items: center; /* Căn dọc giữa */
+    justify-content: center; /* Căn ngang giữa */
+}
+
+#seeMore {
+    border-radius: 30px;
+    display: none;
+    border: none; /* Bỏ border */
+    font-size: 50px; /* Cỡ chữ tăng lên 20px */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu xám */
+    color: white; /* Chuyển chữ sang màu trắng */
+    cursor: pointer;
+    width: 100%; /* Kích thước bằng với item-4 */
+    height: 100%; /* Kích thước bằng với item-4 */
+    position: absolute; /* Tùy chỉnh vị trí */
+    top: 0; /* Tùy chỉnh vị trí */
+    left: 0; /* Tùy chỉnh vị trí */
+}
+
+
+
+/* CSS cho layout gallery */
+.gallery-container {
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+}
+
+.image-container {
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 80%;
+}
+
+.prev-button, .next-button, .close-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: none;
+    background-color: none;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+}
+
+.prev-button, .next-button {
+    width: 50px;
+    height: 50px;
+}
+
+.prev-button {
+    left: 3%;
+}
+
+.next-button {
+    right: 3%;
+}
+
+.close-button {
+    top: 4%;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+

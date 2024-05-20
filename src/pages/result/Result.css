@@ -1,0 +1,190 @@
+#root {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    background-color: white;
+    width: 90vw;
+    margin-left: 5%;
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.accommodation-price{
+    color: #3C6553;
+text-align: right;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.left {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    width: 27vw;
+    height: 50%;
+    border-radius: 30px;
+    box-shadow: 2px 2px 40px -12px rgba(0, 0, 0, 0.25);
+}
+
+.left-container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.right {
+    width: 55vw;
+    height: auto;
+}
+
+.filter {
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+p.tag {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.price-input {
+    width: 9vw;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+    margin-right: 10px;
+    padding-left: 10px;
+    text-align: left;
+    background: #ebefee;
+}
+
+.price-inputt {
+    max-width: 250px;
+    width: 70%;
+    height: 39px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+    margin-right: 10px;
+    padding-left: 10px;
+    text-align: left;
+    background: #ebefee;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit {
+    width: 100%;
+    text-align: center;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #3c6553;
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.right {
+    padding: 20px;
+}
+
+.right h2 {
+    margin-bottom: 10px;
+}
+
+.accommodation-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.accommodation-item {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 26px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    padding: 20px;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.image-wrapper {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.accommodation-image {
+    border-radius: 26px;
+    max-width: 270px;
+    height: auto;
+}
+
+.accommodation-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.accommodation-name {
+    margin-left: 30px;
+}
+
+.accommodation-address {
+    margin-left: 30px;
+    color: #3c6553;
+    font-family: "Montserrat", sans-serif;
+    line-height: normal;
+}
+
+.accommodation-price {
+    margin: 0;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.reviews-badge {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    color: black;
+    padding: 5px;
+    font-size: 19px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .accommodation-image {
+        max-width: 220px;
+    }
+    .accommodation-address {
+        font-size: 10px;
+    }
+}

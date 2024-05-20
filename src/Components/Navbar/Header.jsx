@@ -1,12 +1,42 @@
 import './Header.css';
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useState, useEffect } from 'react';
+import { User, Search, ShoppingCart } from 'lucide-react';
 
 function Header() {
     const [check, setCheck] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [searchValue, setSearchValue] = useState('');
+
+    useEffect(() => {
+        const storedSearchValue = localStorage.getItem('searchValue');
+        if (storedSearchValue) {
+            setSearchValue(storedSearchValue);
+            setShowSearch(true); // Tự động hiển thị thanh tìm kiếm
+        }
+        
+        // Kiểm tra URL khi component được tạo ra
+        handleURLChange();
+    }, []);
+
+    useEffect(() => {
+        // Xóa dữ liệu tìm kiếm và ẩn thanh tìm kiếm khi URL thay đổi và không chứa '/result'
+        handleURLChange();
+    }, [window.location.pathname]);
+
+    const loginStatus = () => {
+        if (!check) {
+            window.location.href = "/login";
+        }
+    }
+    const handleURLChange = () => {
+        if (!window.location.pathname.includes('/result')) {
+            // Xóa giá trị tìm kiếm
+            localStorage.removeItem('searchValue');
+            // Ẩn thanh tìm kiếm
+            setShowSearch(false);
+            setSearchValue("")
+        }
+    };
 
     const handleClick = () => {
         if (!check) {
@@ -16,8 +46,8 @@ function Header() {
 
     const handleSearchClick = () => {
         if (showSearch && searchValue) {
-            // Navigate to the search results page or perform the search
-            window.location.href = `/search?query=${searchValue}`;
+            localStorage.setItem('searchValue', searchValue);
+            window.location.href = "/result";
         } else if (showSearch && !searchValue) {
             setShowSearch(false);
         } else {
@@ -25,15 +55,41 @@ function Header() {
         }
     };
 
+    const handleMenuClick = (e, sectionId) => {
+        e.preventDefault();
+        // Chuyển hướng về trang chính
+        window.location.href = "/";
+        // Lưu trữ phần hash của URL để cuộn xuống sau khi trang chính đã được tải
+        localStorage.setItem('scrollToSection', sectionId);
+    };
+    
+    useEffect(() => {
+        const scrollToSection = localStorage.getItem('scrollToSection');
+        if (scrollToSection && window.location.pathname === '/') {
+            localStorage.removeItem('scrollToSection');
+            const section = document.getElementById(scrollToSection);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, []);
+
+    const handleHomeClick = () => {
+        localStorage.removeItem('searchValue'); 
+        setSearchValue('');
+        setShowSearch(false); 
+    };
+    
+
     return (
         <div className="navBar">
             <img src="" alt="PROJECT NAME LOGO" />
 
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="#aboutus">About Us</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Destinations</a></li>
+                <li><a href="/" onClick={handleHomeClick}>Home</a></li>
+                <li><a href="/" onClick={(e) => handleMenuClick(e, 'aboutus')}>About Us</a></li>
+                <li><a href="/" onClick={(e) => handleMenuClick(e, 'services')}>Services</a></li>
+                <li><a href="/" onClick={(e) => handleMenuClick(e, 'destinations')}>Destinations</a></li>
             </ul>
 
             <div className="profile-icons">
@@ -47,10 +103,13 @@ function Header() {
                     />
                 )}
                 <div className="icon-wrapper" onClick={handleSearchClick}>
-                    <FontAwesomeIcon icon={faSearch} className="icon" />
+                    <Search size={15} />
+                </div>
+                <div className="icon-wrapper" onClick={loginStatus}>
+                    <User size={15} />
                 </div>
                 <div className="icon-wrapper" onClick={handleClick}>
-                    <FontAwesomeIcon icon={faUser} className="icon" />
+                    <ShoppingCart size={15} />
                 </div>
                 <p className="booking" onClick={handleClick}>Booking</p>
             </div>

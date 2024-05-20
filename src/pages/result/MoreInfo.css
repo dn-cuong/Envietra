@@ -1,0 +1,114 @@
+.MoreInfo {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+    margin-left: -1vw;
+  }
+  
+  .dropdown-container p {
+    border-radius: 10px;
+    max-width: 353px;
+    width: 15vw;
+    height: 45px;
+    flex-shrink: 0;
+    background: #EBEFEE;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  p > span {
+    margin-right: 10px;
+  }
+  
+  .selection-content {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 89%;
+    display: flex;
+    flex-direction: column;
+  }
+  .dropdown-container {
+    position: relative;
+  }
+  
+  .selection-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 7.7vw;
+    background-color: white;
+    padding: 10px;
+    z-index: 1000;
+  }
+  
+  .selection-content.show {
+    display: block;
+  }
+  .selection-content.show {
+    opacity: 1;
+    width: 89%;
+    border-radius: 16px;
+    pointer-events: auto;
+  }
+  
+  .input-container {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .input-label {
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .input-label label {
+    margin-right: 1em;
+    font-weight: bold;
+  }
+  
+  .input-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-container button {
+    width: 29px;
+    border-radius: 50%;
+    height: 29px;
+    font-weight: bold;
+  }
+  
+  .input-container input {
+    font-weight: bold;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    width: 50px;
+    padding-left: 0.5vw;
+  }
+  
+  .input-label span {
+    font-size: 0.8em;
+    color: #999;
+  }
+  

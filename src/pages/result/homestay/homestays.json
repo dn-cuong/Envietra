@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "Dream Hill - Sườn đồi mộng mơ",
+        "address": "Ngõ Suối, thôn Đồng Bồ, xã Đông Xuân, h.Quốc Oai, Hà Nội",
+        "price": "200.000",
+        "currency": "₫",
+        "reviews": "⭐ 4.5",
+        "description": "A beautiful homestay with a dreamy hillside view.",
+        "images": [
+            "https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/397442446_169702509547457_8442301666497253645_n.jpg?_nc_cat=108&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFQzar32SymMW0nJ5a33OFo1PCVVXgCmj_U8JVVeAKaP3Px4_wA0zNquyoallpgQZIStV5uy3EtdFK0Rrb8t396&_nc_ohc=F3ulsA3hffgQ7kNvgFRIye9&_nc_ht=scontent.fhan5-8.fna&oh=00_AYD4jEG3pEpRKTCpfQ-WxOSgDAfDbyKfKRbif0x3735VCw&oe=6650A017",
+            "https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/397483198_169702899547418_5146423543972259460_n.jpg?_nc_cat=105&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEkECq6JqCE_UmGdxOArhOcLnLPd-4bYzkucs937htjOYQjCI3jLAzX_a9_q_FhmoEOw3JeKp0XGMJNNhgOseEZ&_nc_ohc=knNl3hdI9GMQ7kNvgHf6Ww6&_nc_ht=scontent.fhan5-2.fna&oh=00_AYBUeCoragJGgHAp275uMY2zBAymTuJptjssrhQaKcC58A&oe=6650AA09",
+            "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/281851665_2183022991867108_7885478029525493787_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGtl-7sYArt_hdhXlScn8BZioZ3K4lKYAKKhncriUpgAlSsKX6befUfrp3Opc71Q-_zs6GdRTgJKGYAizZv8Ebq&_nc_ohc=g27MW_602vAQ7kNvgEjh4aZ&_nc_ht=scontent.fhan5-10.fna&oh=00_AYDXpUtPR_XMKVdou5nGEZhbSwa4xWswtX0yJsdQ2ECIRQ&oe=6650B4A4",
+            "https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/397843624_169703109547397_7098978130326743612_n.jpg?_nc_cat=104&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEaeI7fUbQH7a3t5SU94UvaYF6DG55M1vBgXoMbnkzW8P1p8Ud1TJtQXkoYApXKi1_pQ-u0r0LfpSDJIdM2OV0u&_nc_ohc=Zh_wYDEcRDAQ7kNvgHgTlAJ&_nc_ht=scontent.fhan5-2.fna&oh=00_AYBZSghVExlThPRBhkV9SspqPq8MZi6TsZ9u8wRg6a-54g&oe=6650B742",
+            "https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/397843624_169703109547397_7098978130326743612_n.jpg?_nc_cat=104&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEaeI7fUbQH7a3t5SU94UvaYF6DG55M1vBgXoMbnkzW8P1p8Ud1TJtQXkoYApXKi1_pQ-u0r0LfpSDJIdM2OV0u&_nc_ohc=Zh_wYDEcRDAQ7kNvgHgTlAJ&_nc_ht=scontent.fhan5-2.fna&oh=00_AYBZSghVExlThPRBhkV9SspqPq8MZi6TsZ9u8wRg6a-54g&oe=6650B742",
+            "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/281851665_2183022991867108_7885478029525493787_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGtl-7sYArt_hdhXlScn8BZioZ3K4lKYAKKhncriUpgAlSsKX6befUfrp3Opc71Q-_zs6GdRTgJKGYAizZv8Ebq&_nc_ohc=g27MW_602vAQ7kNvgEjh4aZ&_nc_ht=scontent.fhan5-10.fna&oh=00_AYDXpUtPR_XMKVdou5nGEZhbSwa4xWswtX0yJsdQ2ECIRQ&oe=6650B4A4"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Dream  - Sườn đồi mộng mơ",
+        "address": "Ngõ Suối, thôn Đồng Bồ, xã Đông Xuân, h.Quốc Oai, Hà Nội",
+        "price": "100.000",
+        "currency": "₫",
+        "reviews": "⭐ 4.5",
+        "description": "A cozy homestay with excellent amenities.",
+        "images": [
+            "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/281851665_2183022991867108_7885478029525493787_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGtl-7sYArt_hdhXlScn8BZioZ3K4lKYAKKhncriUpgAlSsKX6befUfrp3Opc71Q-_zs6GdRTgJKGYAizZv8Ebq&_nc_ohc=g27MW_602vAQ7kNvgEjh4aZ&_nc_ht=scontent.fhan5-10.fna&oh=00_AYDXpUtPR_XMKVdou5nGEZhbSwa4xWswtX0yJsdQ2ECIRQ&oe=6650B4A4",
+            "https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/280534998_2183021508533923_7267235365719543037_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEZVoGq-qFDLy-N10WwwPFaDt7jxa1oMNUO3uPFrWgw1d8Eb69J3xZLuc7F_ybY0M-LAO1RsYAm88p-wm4V3yoO&_nc_ohc=KXqFvnC-4bIQ7kNvgEhXLez&_nc_ht=scontent.fhan5-2.fna&oh=00_AYAaqCVkgH8R8fChY6M0IbXib2n0DM9ZiobAq3hVouRogg&oe=66509A5B",
+            "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/281734449_2183021428533931_96046966690067468_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGkGabnfi9wmzwfQNAPT7U8u9_6oUx2sIm73_qhTHawiQtaKtBK0YPybYtDWiklWFXbDUOBT6hONHDJnUw9WEkd&_nc_ohc=HBi7mioreCwQ7kNvgFEMgM7&_nc_ht=scontent.fhan5-10.fna&oh=00_AYD1ujRzLHRP1hV_c31pxQ-cfsVeY0GIPAMZ-gELuTiVAQ&oe=6650BC55",
+            "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/364805906_111529545364754_5042468715325754735_n.png?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGfr2X8ygT7ImMHsB0vPxA1kGV-O_dbB0yQZX4791sHTP5j3f2aT7i5Y1ty7jmDFPsvDQwvJ3rHyHRPXPV5E-Rz&_nc_ohc=mrPAUilSEtgQ7kNvgE07s58&_nc_ht=scontent.fhan5-10.fna&oh=00_AYAcw3CB8tHTOf-hGtgv-J3-Mcx90enCOyexlLTMpN_8OA&oe=6650C6A8",
+            "https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/397843624_169703109547397_7098978130326743612_n.jpg?_nc_cat=104&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEaeI7fUbQH7a3t5SU94UvaYF6DG55M1vBgXoMbnkzW8P1p8Ud1TJtQXkoYApXKi1_pQ-u0r0LfpSDJIdM2OV0u&_nc_ohc=Zh_wYDEcRDAQ7kNvgHgTlAJ&_nc_ht=scontent.fhan5-2.fna&oh=00_AYBZSghVExlThPRBhkV9SspqPq8MZi6TsZ9u8wRg6a-54g&oe=6650B742"
+        ]
+    }
+]

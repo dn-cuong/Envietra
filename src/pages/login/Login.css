@@ -1,0 +1,148 @@
+#root {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.background {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;    /* Vertically center */
+    height: 100vh;          /* Make sure the background takes full height of the viewport */
+    background-color: #f0f0f0; /* Example background color */
+    background-image: url("https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/394680581_164230530094655_8146232310204631075_n.jpg?_nc_cat=109&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFbUNdoKhYS-xdo59AQdhbw51SOSVf18EjnVI5JV_XwSFzEK0fOGS4q-QgYSEsx_G4WmANjMwTk73B5E5f6ORLf&_nc_ohc=EhF1fm4QjHMQ7kNvgHYa5N3&_nc_ht=scontent.fhan5-9.fna&oh=00_AYCxLpBHiUn9GmNHyqXw3JG0pZX0W8RsJL50gPYux4pwIw&oe=664FD476");
+}
+
+.login-container {
+    padding: 20px;
+    width: 70vw;
+    height: 70vh;
+    background-color: #fff; /* Example background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Example shadow for better visibility */
+    border-radius: 50px;    /* Rounded corners */
+    display: flex;
+    justify-content: space-between;
+}
+
+.image {
+    background-image: url("https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/394680581_164230530094655_8146232310204631075_n.jpg?_nc_cat=109&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFbUNdoKhYS-xdo59AQdhbw51SOSVf18EjnVI5JV_XwSFzEK0fOGS4q-QgYSEsx_G4WmANjMwTk73B5E5f6ORLf&_nc_ohc=EhF1fm4QjHMQ7kNvgHYa5N3&_nc_ht=scontent.fhan5-9.fna&oh=00_AYCxLpBHiUn9GmNHyqXw3JG0pZX0W8RsJL50gPYux4pwIw&oe=664FD476");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    width: 55%;
+    height: 100%;
+}
+
+.form {
+    display: flex;
+    justify-content: center; /* Align items to the start (top) */
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+    padding-top: 20px; /* Ensure there is space at the top */
+}
+
+.form img {
+    margin-top: 20px; /* Space between the top of the form and the image */
+}
+
+.formlogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Add spacing between form elements */
+    margin-top: 20px; /* Ensure form elements start below the image */
+}
+
+.form input {
+    padding-left: 20px;
+    border: none;
+    border-radius: 22.5px;
+    background: #EBEBEB;
+    width: 15vw;
+    height: 5vh;
+    flex-shrink: 0;
+    color: #000;
+font-family: Montserrat;
+font-size: 11px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.form button {
+    border-radius: 22.5px;
+    background: #3C6553;
+    width: 16vw;
+    height: 5vh;
+    flex-shrink: 0;
+    color: #fff;
+    font-weight: 700;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+}
+
+.form p.a {
+    max-width: 12vw;
+    color: #000;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    font-weight:bolder;
+    line-height: normal;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Spacing between social login buttons */
+    margin-top: 20px; /* Space above the social login buttons */
+}
+
+.social-icon {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
+    cursor: pointer;
+}
+
+
+.form img{
+    margin-bottom: 20px;
+}
+
+.form img.social-icon {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.a {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #f2f2f2; /* Light gray background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.social-icon-circle:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+.social-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+}

@@ -6,13 +6,7 @@ import AboutUs from "../Components/Landing/Components_of_Landing/AboutUs.jsx";
 
 function Landing() {
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            alert('Please log in to continue.');
-        }, 3000);
 
-        return () => clearTimeout(timer);
-    }, []); 
 
     const handleClick = () => {
         alert('Chưa đăng nhập');
@@ -83,7 +77,7 @@ in the world’s most desirable destinations.</p>
                     </div>
                 </div>
             </div>
-            <div className="AboutUs" id="aboutus">
+            <div className="AboutUs" id="aboutus" >
                 <AboutUs />
             </div>
         </div>
