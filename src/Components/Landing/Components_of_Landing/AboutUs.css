@@ -11,6 +11,7 @@
 .leftPart {
     /* background-color: aqua; */
     width: 55vw;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,10 +31,9 @@
 
 }
 .img-container{
-    
+    margin-top: 1.6vh;
     width: 100%;
     height: 40vh;
-    /* background-color: black; */
 }
 
 .img-container img{

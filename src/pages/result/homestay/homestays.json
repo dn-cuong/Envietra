@@ -7,6 +7,8 @@
         "currency": "₫",
         "reviews": "⭐ 4.5",
         "description": "A beautiful homestay with a dreamy hillside view.",
+        "advantages": ["Pool", "Dog Friendly", "Free Wifi", "Kayak", "Car Park"],
+        "embedmap": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2215.6053245672733!2d105.50012003509448!3d20.9449178175421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313443c3971f6be1%3A0xed1247357165c778!2zRHJlYW0gSGlsbCAtIFPGsOG7nW4gxJHhu5NpIHRyb25nIG3GoQ!5e0!3m2!1sen!2sus!4v1716268163585!5m2!1sen!2sus",
         "images": [
             "https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/397442446_169702509547457_8442301666497253645_n.jpg?_nc_cat=108&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFQzar32SymMW0nJ5a33OFo1PCVVXgCmj_U8JVVeAKaP3Px4_wA0zNquyoallpgQZIStV5uy3EtdFK0Rrb8t396&_nc_ohc=F3ulsA3hffgQ7kNvgFRIye9&_nc_ht=scontent.fhan5-8.fna&oh=00_AYD4jEG3pEpRKTCpfQ-WxOSgDAfDbyKfKRbif0x3735VCw&oe=6650A017",
             "https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/397483198_169702899547418_5146423543972259460_n.jpg?_nc_cat=105&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEkECq6JqCE_UmGdxOArhOcLnLPd-4bYzkucs937htjOYQjCI3jLAzX_a9_q_FhmoEOw3JeKp0XGMJNNhgOseEZ&_nc_ohc=knNl3hdI9GMQ7kNvgHf6Ww6&_nc_ht=scontent.fhan5-2.fna&oh=00_AYBUeCoragJGgHAp275uMY2zBAymTuJptjssrhQaKcC58A&oe=6650AA09",
@@ -24,6 +26,8 @@
         "currency": "₫",
         "reviews": "⭐ 4.5",
         "description": "A cozy homestay with excellent amenities.",
+        "advantages": ["Pool", "Dog Friendly", "Free Wifi", "Kayak", "Car Park"],
+        "embedmap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.189469385989!2d105.49753607587093!3d20.944904990652187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134433305c14597%3A0xd3373dcb05b13d07!2zSG9tZWx5IExhbmQgxJDDtG5nIFh1w6Ju!5e0!3m2!1sen!2s!4v1716268506098!5m2!1sen!2s",
         "images": [
             "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/281851665_2183022991867108_7885478029525493787_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGtl-7sYArt_hdhXlScn8BZioZ3K4lKYAKKhncriUpgAlSsKX6befUfrp3Opc71Q-_zs6GdRTgJKGYAizZv8Ebq&_nc_ohc=g27MW_602vAQ7kNvgEjh4aZ&_nc_ht=scontent.fhan5-10.fna&oh=00_AYDXpUtPR_XMKVdou5nGEZhbSwa4xWswtX0yJsdQ2ECIRQ&oe=6650B4A4",
             "https://scontent.fhan5-2.fna.fbcdn.net/v/t39.30808-6/280534998_2183021508533923_7267235365719543037_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEZVoGq-qFDLy-N10WwwPFaDt7jxa1oMNUO3uPFrWgw1d8Eb69J3xZLuc7F_ybY0M-LAO1RsYAm88p-wm4V3yoO&_nc_ohc=KXqFvnC-4bIQ7kNvgEhXLez&_nc_ht=scontent.fhan5-2.fna&oh=00_AYAaqCVkgH8R8fChY6M0IbXib2n0DM9ZiobAq3hVouRogg&oe=66509A5B",

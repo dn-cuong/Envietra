@@ -45,14 +45,15 @@ function AboutUs() {
     return (
         <div className='container'>
             <div className='leftPart'>
+            <div className='img-container'>
+                    <img src='./src/assets/asdf.png' alt="" />
+                </div>
                 <div className="leftPart-content">
                     <p className="title">VLOCALS <br />TEAM</p>
                     <p className='content'>A non-profit organization (NPO) that supports and links the Homestay chain to provide green services, imbued with local elements, through supporting the Marketing and Information Technology teams.</p>
                     
                 </div>
-                <div className='img-container'>
-                    <img src='./src/assets/asdf.png' alt="" />
-                </div>
+                
             </div>
             <div className='rightPart'>
                 <div><p className="title">VLOCALS PEOPLE</p></div>

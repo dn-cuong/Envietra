@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './Result.css';
 import Header from '../../Components/Navbar/Header';
 import MoreInfo from '../result/myComponent';
-
+import { MapPinned } from 'lucide-react';
 function Result() {
     const [rooms, setRooms] = useState(1);
     const [people, setPeople] = useState(1);
@@ -125,7 +125,7 @@ function Result() {
                                     />
                                     <div className="accommodation-details">
                                         <h3 className="accommodation-name">{accommodation.name}</h3>
-                                        <p className="accommodation-address">{accommodation.address}</p>
+                                        <p className="accommodation-address"><MapPinned/> {accommodation.address}</p>
                                         <p className="accommodation-price">{accommodation.price} {accommodation.currency}</p>
                                     </div>
                                 </li>
