@@ -70,6 +70,7 @@ line-height: normal;
 }
 
 .form button {
+    border: none;
     border-radius: 22.5px;
     background: #3C6553;
     width: 16vw;
@@ -83,6 +84,7 @@ font-style: normal;
 }
 
 .form p.a {
+    margin: 0;
     max-width: 12vw;
     color: #000;
     text-align: center;

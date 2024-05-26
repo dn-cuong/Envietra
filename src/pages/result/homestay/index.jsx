@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './ImageGallery.css'; // Import your CSS file
 import homestaysData from './homestays.json'; // Import your JSON data
 import Header from "../../../Components/Navbar/Header";
-import { MapPinned } from 'lucide-react';
+import { MapPinned, ChevronDown, MessageCircleMore } from 'lucide-react';
+import MoreInfo from '../myComponent';
+
 function ImageGallery() {
     const [imagesData, setImagesData] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showGallery, setShowGallery] = useState(false);
     const [selectedHomestay, setSelectedHomestay] = useState(null);
+    const [rooms, setRooms] = useState(1);
+    const [people, setPeople] = useState(1);
+    const [children, setChildren] = useState(0);
+    const [showSelection, setShowSelection] = useState(false);
 
     useEffect(() => {
         // Get homestay ID from local storage
@@ -23,13 +29,7 @@ function ImageGallery() {
         } else {
             console.error(`Homestay with ID ${selectedHomestayId} not found.`);
         }
-    }, [selectedHomestay]);
-
-    useEffect(() => {
-        if (selectedHomestay) {
-            setSelectedHomestay(selectedHomestay)
-        }
-    }, [selectedHomestay]);
+    }, []);
 
     const handleSeeMoreClick = () => {
         setShowGallery(true);
@@ -47,9 +47,22 @@ function ImageGallery() {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % imagesData.length);
     };
 
+    const handleBookNowClick = () => {
+        if (selectedHomestay) {
+            let bookedHomestays = JSON.parse(localStorage.getItem('bookedHomestays')) || [];
+            bookedHomestays.push(selectedHomestay);
+            localStorage.setItem('bookedHomestays', JSON.stringify(bookedHomestays));
+            console.log('Booked Homestays:', bookedHomestays);
+            alert('Homestay booked successfully!');
+        }
+    };
+
     const remainingImagesCount = imagesData.length > 4 ? imagesData.length - 4 : 0;
     const seeMoreButtonText = `+${remainingImagesCount}`;
-    
+    const toggleSelection = () => {
+        setShowSelection(!showSelection);
+      };
+
     return (
         <>
             <Header />
@@ -62,6 +75,7 @@ function ImageGallery() {
                         <button id="seeMore" style={{ display: imagesData.length > 4 ? 'block' : 'none' }} onClick={handleSeeMoreClick}>{seeMoreButtonText}</button>
                     </div>
                 </div>
+                
 
                 {selectedHomestay && (
                     <div className="homestay-details">
@@ -69,9 +83,9 @@ function ImageGallery() {
                             <h1>{selectedHomestay.name}</h1>
                             <p className='hs-address'> <MapPinned/> {selectedHomestay.address}   <a href="https://www.google.com/maps?ll=20.9449,105.500111&z=16&t=m&hl=en&gl=US&mapclient=embed&cid=17082794631431047032" target={"_blank"}> <i style={{color: "blue"}}> ‣ See map</i></a></p>
                             <div className='map-container'>
-                                <iframe src={selectedHomestay.embedmap} className="map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src={selectedHomestay.embedmap} className="map" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                                 <ul className='advantages' >
-                                    {selectedHomestay.advantages.map((c, index) => <li id={index} className="ad">{c}</li> )}
+                                    {selectedHomestay.advantages.map((c, index) => <li key={index} className="ad">{c}</li> )}
                                 </ul>
                             </div>
                             <p className='homestay-slogan'>Giữa núi rừng, hè cũng mát</p>
@@ -82,15 +96,73 @@ Không lo nắng nóng vì không gian bao quanh bởi núi rừng nhưng lại 
                         </div>
                         <div className="payment">
                             <div className="cost-container">
-                                <p className='price'>{selectedHomestay.price}<p className='de'>₫ / 1 đêm</p> </p>
+                            <div className='price'>
+    <span>{selectedHomestay.price}</span>
+    <span className='de'>₫ / 1 đêm</span>
+</div>
+
                                 <p className='star'>{selectedHomestay.reviews}</p>
                             </div>
-                            <div className='option'></div>
-                            <button className='submit'>BOOK NOW</button>
+                            <div className='option'>
+                                <div className='date'>
+                                    <div className="check-in">
+                                        <label htmlFor="checkin">Check-in</label>
+                                        <input type="date" id="checkin" name="checkin" required/>
+                                    </div>
+                                    <div className="separate"></div>
+                                    <div className="check-out">
+                                        <label htmlFor="checkout">Check-out</label>
+                                        <input type="date" id="checkout" name="checkout" required/>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div className='number'>
+                                    
+                                    <p className='title'>Guests & rooms <ChevronDown size={25}/></p>
+                                    <div className='option-container'>
+                                        <p onClick={toggleSelection}>
+                                            {rooms} rooms, {people+children} people
+                                        </p>
+                                    </div>
+                                    
+
+                                </div>
+<hr />
+                                <div className='number'>
+                                    
+                                    <p className='title'>Service Pack <ChevronDown size={25}/></p>
+                                    <div className='option-container'>
+                                        <p >Something something
+                                        </p>
+                                    </div>
+                                    
+
+                                </div>
+                            
+                            
+                            </div>
+                            <button className='submit' onClick={handleBookNowClick}>BOOK NOW</button>
                             <button className='addToCart'>ADD TO CART</button>
                         </div>
                     </div>
                 )}
+                
+                <br />
+                <hr />
+                <br />
+                <div className='contact-container'>
+                    <div className='contact'>
+                        <p className='got-a-question'>Got a question?</p>
+                        <p className='contact-info-title'>Contact info</p>
+                        <p className='phone-number'>+99999999999</p>
+                    </div>
+                    <div className='link-contact'>
+                        <button className='send-messages'>Send a message</button>
+                        <p>Send us a message right now and we’ll answer!</p>
+                    </div>
+                </div>
+                <br />
+                <hr />
                 {showGallery && (
                     <>
                         <div id="galleryContainer" className="gallery-container">

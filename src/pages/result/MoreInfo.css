@@ -92,6 +92,7 @@
   }
   
   .input-container button {
+    border: none;
     width: 29px;
     border-radius: 50%;
     height: 29px;
