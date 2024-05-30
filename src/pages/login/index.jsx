@@ -6,7 +6,7 @@ function Login() {
             <div className="login-container">
                 <div className="form">
                     <img src="" alt="PROJECT NAME LOGO" onClick={() => window.location.href="/"}/>
-                    <p className="a">Start your perfect trip</p>
+                    <p className="a">Start your <br />perfect trip</p>
                     <div className="logo">
                         <a href="#">
                             <div className="social-icon-circle">

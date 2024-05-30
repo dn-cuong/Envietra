@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CircleCheck, CircleCheckBig } from "lucide-react";
 import Header from "../Components/Navbar/Header.jsx";
-import { Link } from 'react-router-dom';
 import '../pages/Landing.css';
 import AboutUs from "../Components/Landing/Components_of_Landing/AboutUs.jsx";
 
@@ -12,7 +11,7 @@ function Landing() {
     useEffect(() => {
         const bookedHomestays = localStorage.getItem('bookedHomestays');
         if (bookedHomestays) {
-            setIsBooked(true);
+            setIsBooked(true); 
         }
     }, []);
 
@@ -49,7 +48,7 @@ function Landing() {
         <div className="Landing">
             <div className="Home">
                 <Header />
-                
+            
                 {isBooked && (<div className='booked'>
                     <div className='name'>
                         <CircleCheck/>
@@ -105,7 +104,7 @@ function Landing() {
                                     <button className="booking-details">Booking details</button>
                                     <button className="edityyy">Edit information</button>
                                 </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
 )} 
@@ -113,14 +112,14 @@ function Landing() {
                     <p className='slogan'>* Book Perfect Stay</p>
                     <p className='slogan'>For Your Vacation</p>
                 </div>
-                <div className='bookButtonContainer' onClick={handleClick}>
+                {/* <div className='bookButtonContainer' onClick={handleClick}>
                     <div className='bookButton'>
                         <div className='main'>
                             <p>Book your <br />stay <br /> ⬊</p>
                         </div>
                     </div>
                 </div>
-                <div className='goDown' onClick={change}>⬇</div>
+                <div className='goDown' onClick={change}>⬇</div> */}
             </div>
             <div className="homestay-container">
                 <div className="homestay-view">

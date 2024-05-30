@@ -86,7 +86,11 @@ function Result() {
                 <div className="content">
                     <div className="left">
                         <div className="left-container">
+                            <div className="filter">
                             <p className="filter">Filters</p>
+                            <p>Hide</p>
+                            </div>
+                        
                             <br />
                             <p className="tag">Price</p>
                             <input

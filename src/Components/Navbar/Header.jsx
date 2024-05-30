@@ -1,11 +1,12 @@
 import './Header.css';
 import { useState, useEffect } from 'react';
-import { User, Search, ShoppingCart } from 'lucide-react';
+import { User, Search, ShoppingCart, AlignJustify } from 'lucide-react';
 
 function Header() {
     const [check, setCheck] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [searchValue, setSearchValue] = useState('');
+    const [menuOpen, setMenuOpen] = useState(false); // State for menu visibility
 
     useEffect(() => {
         const storedSearchValue = localStorage.getItem('searchValue');
@@ -34,7 +35,7 @@ function Header() {
             localStorage.removeItem('searchValue');
             // Ẩn thanh tìm kiếm
             setShowSearch(false);
-            setSearchValue("")
+            setSearchValue("");
         }
     };
 
@@ -79,13 +80,16 @@ function Header() {
         setSearchValue('');
         setShowSearch(false); 
     };
-    
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen); // Toggle menu visibility
+    };
 
     return (
         <div className="navBar">
-            <img src="" alt="PROJECT NAME LOGO" />
-
-            <ul>
+            <img src="" alt="PROJECT NAME LOGO" /> 
+            <div className="hamburger" onClick={toggleMenu}><AlignJustify /></div>
+            <ul className={menuOpen ? 'open' : ''}>
                 <li><a href="/" onClick={handleHomeClick}>Home</a></li>
                 <li><a href="/" onClick={(e) => handleMenuClick(e, 'aboutus')}>About Us</a></li>
                 <li><a href="/" onClick={(e) => handleMenuClick(e, 'services')}>Services</a></li>
