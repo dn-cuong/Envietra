@@ -5,7 +5,9 @@ function Login() {
         <div className="background">
             <div className="login-container">
                 <div className="form">
+                <div className="hehe">
                     <img src="" alt="PROJECT NAME LOGO" onClick={() => window.location.href="/"}/>
+                    
                     <p className="a">Start your <br />perfect trip</p>
                     <div className="logo">
                         <a href="#">
@@ -24,6 +26,7 @@ function Login() {
                             </div>
                         </a>
                     </div>
+                    </div>
                     <div className="formlogin">
                         <input type="text" placeholder="Full name" />
                         <input type="text" placeholder="Email" />
@@ -33,7 +36,6 @@ function Login() {
                     </div>
                 </div>
                 <div className="image">
-
                 </div>
             </div>
         </div>

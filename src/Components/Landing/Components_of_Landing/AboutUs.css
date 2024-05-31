@@ -1,11 +1,10 @@
 .aboutContainer {
-    padding-right: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .title{
-    font-size: 40px;
+    font-size: 3rem;
     font-weight: bold;
 }
 .leftPart {

@@ -50,13 +50,13 @@ function AboutUs() {
                     <img src='./src/assets/asdf.png' alt="" />
                 </div>
                 <div className="leftPart-content">
-                    <p className="title">VLOCALS <br />TEAM</p>
+                    <p className="title">ENVIETRA <br />TEAM</p>
                     <p className='content'>A non-profit organization (NPO) that supports and links the Homestay chain to provide green services, imbued with local elements, through supporting the Marketing and Information Technology teams.</p>
                     
                 </div>
             </div>
             <div className='rightPart'>
-                <div><p className="title">VLOCALS PEOPLE</p></div>
+                <div><p className="title">ENVIETRA PEOPLE</p></div>
                 <p>A non-profit organization (NPO) that supports and links the Homestay chain to provide green services, imbued with local elements, through supporting the Marketing and Information Technology teams.</p>
                 <div className="CardContainer">
                     {cardsData.map(card => (
