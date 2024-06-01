@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CircleCheck, CircleCheckBig } from "lucide-react";
+import { CircleCheck, CircleCheckBig, CalendarDays,Home, Pointer } from "lucide-react";
 import Header from "../Components/Navbar/Header.jsx";
 import '../pages/Landing.css';
 import AboutUs from "../Components/Landing/Components_of_Landing/AboutUs.jsx";
@@ -7,7 +7,16 @@ import AboutUs from "../Components/Landing/Components_of_Landing/AboutUs.jsx";
 function Landing() {
     const [check, setCheck] = useState(false);
     const [isBooked, setIsBooked] = useState(false); // Khởi tạo mặc định là false
+    const [displayCalendar, setdisplayCalendar] = useState(false)
+    const [displayLocation, setdisplayLocation] = useState(false)
 
+    const display = () => {
+        setdisplayCalendar(!displayCalendar)
+    }
+
+    const location = () => {
+        setdisplayLocation(!displayLocation)
+    }
     useEffect(() => {
         const bookedHomestays = localStorage.getItem('bookedHomestays');
         if (bookedHomestays) {
@@ -49,12 +58,33 @@ function Landing() {
             <div className="Home">
                 <Header />
             
-                {isBooked && (<div className='booked'>
-                    <div className='name'>
-                        <CircleCheck/>
-                        <p>Dream Hill</p>
+
+                <div className='sloganContainer'>
+                    <p className='slogan'>* Book Perfect Stay</p>
+                    <p className='slogan'>For Your Vacation</p>
+                </div>
+                {/* <div className='bookButtonContainer' onClick={handleClick}>
+                    <div className='bookButton'>
+                        <div className='main'>
+                            <p>Book your <br />stay <br /> ⬊</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='goDown' onClick={change}>⬇</div> */}
+            </div>
+            {isBooked && (<div className='booked'>
+                    <div className='name-container'>
+                        <div className='name'>
+                            <CircleCheck/>
+                            <p>Dream Hill</p>
+                        </div>
+                        <div className='dis'>
+                            <CalendarDays className="CalendarDays"  onClick={display} style={{cursor: "pointer"}}/>
+                            <Home  className='HomeButton' onClick={location} style={{cursor: "pointer"}}/>
+                        </div>
                     </div>
                     <div className="details-container">
+                        {displayCalendar && (
                         <div className="cf">
                             <div className="top">
                                 <div className="left">
@@ -79,10 +109,14 @@ function Landing() {
                                         <p>5 people</p>
                                     </div>
                             </div>
-                        </div>
+                        </div>)}
+                        {displayLocation && (
                         <div className='info'>
                                 <div className='accommodation'>
                                     <div className='img-container'></div>
+                                    <div className='d'>
+
+                                    
                                     <div className='yourstay'>
                                         <p>Your stay:</p>
                                         <a href="facebook.com">Get directions</a>
@@ -90,6 +124,7 @@ function Landing() {
                                     <div className='hsinfo'>
                                         <p>Dream Hill</p>
                                         <p>Đồng bà, đồng xuân</p>
+                                    </div>
                                     </div>
                                 </div>
                                 <div className='payment-infoo'>
@@ -104,23 +139,10 @@ function Landing() {
                                     <button className="booking-details">Booking details</button>
                                     <button className="edityyy">Edit information</button>
                                 </div>
-                        </div>
+                        </div>)}
                     </div>
                 </div>
 )} 
-                <div className='sloganContainer'>
-                    <p className='slogan'>* Book Perfect Stay</p>
-                    <p className='slogan'>For Your Vacation</p>
-                </div>
-                {/* <div className='bookButtonContainer' onClick={handleClick}>
-                    <div className='bookButton'>
-                        <div className='main'>
-                            <p>Book your <br />stay <br /> ⬊</p>
-                        </div>
-                    </div>
-                </div>
-                <div className='goDown' onClick={change}>⬇</div> */}
-            </div>
             <div className="homestay-container">
                 <div className="homestay-view">
                     <div className='card-container'>
