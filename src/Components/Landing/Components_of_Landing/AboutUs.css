@@ -12,7 +12,6 @@
     height: 75vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
 
 }
 
@@ -40,7 +39,6 @@
 }
 
 .rightPart {
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     width: 27vw;
@@ -50,9 +48,9 @@
 /* */
   .CardContainer{
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr)); /* Responsive columns */
-        gap: 3%; /* Space between the cards */
-        justify-items: center; /* Center items in their grid cells */
+        grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr)); 
+        gap: 3%; 
+        justify-items: center; 
         padding: 2rem 0;
     }
     

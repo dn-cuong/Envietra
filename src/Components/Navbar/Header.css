@@ -75,15 +75,22 @@ a {
 
 /* Responsive styles */
 @media (max-width: 1000px) {
+    .navBar{
+        flex-direction:column;
+    }
+    .profile-icons{
+        flex-wrap: wrap;
+    }
+    .bookButtonContainer{
+        display: none;
+    }
     ul {
         display: none;
     }
     .hamburger {
         display: block;
     }
-    .profile-icons {
-        display: none;
-    }
+
     .navBar img {
         display: none;
     }

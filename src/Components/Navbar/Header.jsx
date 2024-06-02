@@ -6,21 +6,19 @@ function Header() {
     const [check, setCheck] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [searchValue, setSearchValue] = useState('');
-    const [menuOpen, setMenuOpen] = useState(false); // State for menu visibility
+    const [menuOpen, setMenuOpen] = useState(false); 
 
     useEffect(() => {
         const storedSearchValue = localStorage.getItem('searchValue');
         if (storedSearchValue) {
             setSearchValue(storedSearchValue);
-            setShowSearch(true); // Tự động hiển thị thanh tìm kiếm
+            setShowSearch(true); 
         }
         
-        // Kiểm tra URL khi component được tạo ra
         handleURLChange();
     }, []);
 
     useEffect(() => {
-        // Xóa dữ liệu tìm kiếm và ẩn thanh tìm kiếm khi URL thay đổi và không chứa '/result'
         handleURLChange();
     }, [window.location.pathname]);
 
@@ -31,9 +29,7 @@ function Header() {
     }
     const handleURLChange = () => {
         if (!window.location.pathname.includes('/result')) {
-            // Xóa giá trị tìm kiếm
             localStorage.removeItem('searchValue');
-            // Ẩn thanh tìm kiếm
             setShowSearch(false);
             setSearchValue("");
         }
@@ -56,11 +52,16 @@ function Header() {
         }
     };
 
+    const handleSearchKeyPress = (e) => {
+        if (e.key === 'Enter' && searchValue) {
+            localStorage.setItem('searchValue', searchValue);
+            window.location.href = "/result";
+        }
+    };
+
     const handleMenuClick = (e, sectionId) => {
         e.preventDefault();
-        // Chuyển hướng về trang chính
         window.location.href = "/";
-        // Lưu trữ phần hash của URL để cuộn xuống sau khi trang chính đã được tải
         localStorage.setItem('scrollToSection', sectionId);
     };
     
@@ -82,7 +83,7 @@ function Header() {
     };
 
     const toggleMenu = () => {
-        setMenuOpen(!menuOpen); // Toggle menu visibility
+        setMenuOpen(!menuOpen); 
     };
 
     return (
@@ -104,6 +105,7 @@ function Header() {
                         placeholder="Search..."
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
+                        onKeyPress={handleSearchKeyPress}
                     />
                 )}
                 <div className="icon-wrapper" onClick={handleSearchClick}>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ImageGallery.css'; // Import your CSS file
 import homestaysData from './homestays.json'; // Import your JSON data
 import Header from "../../../Components/Navbar/Header";
-import { MapPinned, ChevronDown, MessageCircleMore } from 'lucide-react';
+import { MapPinned, ChevronDown } from 'lucide-react';
 import MoreInfo from '../myComponent';
 
 function ImageGallery() {
@@ -14,21 +14,25 @@ function ImageGallery() {
     const [people, setPeople] = useState(1);
     const [children, setChildren] = useState(0);
     const [showSelection, setShowSelection] = useState(false);
+    const [checkInDate, setCheckInDate] = useState('');
+    const [checkOutDate, setCheckOutDate] = useState('');
 
     useEffect(() => {
-        // Get homestay ID from local storage
         const selectedHomestayId = localStorage.getItem('selectedHomestayId');
         
-        // Find homestay with matching ID
         const homestay = homestaysData.find(homestay => homestay.id === parseInt(selectedHomestayId));
         
-        // Set homestay state if found
         if (homestay) {
             setSelectedHomestay(homestay);
             setImagesData(homestay.images);
         } else {
             console.error(`Homestay with ID ${selectedHomestayId} not found.`);
         }
+
+        const savedCheckInDate = localStorage.getItem('checkInDate');
+        const savedCheckOutDate = localStorage.getItem('checkOutDate');
+        if (savedCheckInDate) setCheckInDate(savedCheckInDate);
+        if (savedCheckOutDate) setCheckOutDate(savedCheckOutDate);
     }, []);
 
     const handleSeeMoreClick = () => {
@@ -50,18 +54,35 @@ function ImageGallery() {
     const handleBookNowClick = () => {
         if (selectedHomestay) {
             let bookedHomestays = JSON.parse(localStorage.getItem('bookedHomestays')) || [];
-            bookedHomestays.push(selectedHomestay);
+            const homestayWithDates = {
+                ...selectedHomestay,
+                checkInDate: checkInDate,
+                checkOutDate: checkOutDate
+            };
+            bookedHomestays.push(homestayWithDates);
             localStorage.setItem('bookedHomestays', JSON.stringify(bookedHomestays));
             console.log('Booked Homestays:', bookedHomestays);
             alert('Homestay booked successfully!');
         }
     };
 
+    const handleCheckInDateChange = (e) => {
+        const date = e.target.value;
+        setCheckInDate(date);
+        localStorage.setItem('checkInDate', date);
+    };
+
+    const handleCheckOutDateChange = (e) => {
+        const date = e.target.value;
+        setCheckOutDate(date);
+        localStorage.setItem('checkOutDate', date);
+    };
+
     const remainingImagesCount = imagesData.length > 4 ? imagesData.length - 4 : 0;
     const seeMoreButtonText = `+${remainingImagesCount}`;
     const toggleSelection = () => {
         setShowSelection(!showSelection);
-      };
+    };
 
     return (
         <>
@@ -75,7 +96,6 @@ function ImageGallery() {
                         <button id="seeMore" style={{ display: imagesData.length > 4 ? 'block' : 'none' }} onClick={handleSeeMoreClick}>{seeMoreButtonText}</button>
                     </div>
                 </div>
-                
 
                 {selectedHomestay && (
                     <div className="homestay-details">
@@ -96,50 +116,40 @@ Không lo nắng nóng vì không gian bao quanh bởi núi rừng nhưng lại 
                         </div>
                         <div className="payment">
                             <div className="cost-container">
-                            <div className='price'>
-    <span>{selectedHomestay.price}</span>
-    <span className='de'>₫ / 1 đêm</span>
-</div>
-
+                                <div className='price'>
+                                    <span>{selectedHomestay.price}</span>
+                                    <span className='de'>₫ / 1 đêm</span>
+                                </div>
                                 <p className='star'>{selectedHomestay.reviews}</p>
                             </div>
                             <div className='option'>
                                 <div className='date'>
                                     <div className="check-in">
                                         <label htmlFor="checkin">Check-in</label>
-                                        <input type="date" id="checkin" name="checkin" required/>
+                                        <input type="date" id="checkin" name="checkin" value={checkInDate} onChange={handleCheckInDateChange} required />
                                     </div>
                                     <div className="separate"></div>
                                     <div className="check-out">
                                         <label htmlFor="checkout">Check-out</label>
-                                        <input type="date" id="checkout" name="checkout" required/>
+                                        <input type="date" id="checkout" name="checkout" value={checkOutDate} onChange={handleCheckOutDateChange} required />
                                     </div>
                                 </div>
                                 <hr />
                                 <div className='number'>
-                                    
                                     <p className='title'>Guests & rooms <ChevronDown size={25}/></p>
                                     <div className='option-container'>
                                         <p onClick={toggleSelection}>
                                             {rooms} rooms, {people+children} people
                                         </p>
                                     </div>
-                                    
-
                                 </div>
-<hr />
+                                <hr />
                                 <div className='number'>
-                                    
                                     <p className='title'>Service Pack <ChevronDown size={25}/></p>
                                     <div className='option-container'>
-                                        <p >Something something
-                                        </p>
+                                        <p>Something something</p>
                                     </div>
-                                    
-
                                 </div>
-                            
-                            
                             </div>
                             <button className='submit' onClick={handleBookNowClick}>BOOK NOW</button>
                             <button className='addToCart'>ADD TO CART</button>

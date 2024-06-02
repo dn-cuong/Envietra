@@ -3,11 +3,13 @@ import './Result.css';
 import Header from '../../Components/Navbar/Header';
 import MoreInfo from '../result/myComponent';
 import { MapPinned } from 'lucide-react';
+
 function Result() {
     const [rooms, setRooms] = useState(1);
     const [people, setPeople] = useState(1);
     const [children, setChildren] = useState(0);
     const [showSelection, setShowSelection] = useState(false);
+    const [showLeftContent, setShowLeftContent] = useState(true); // New state for left content visibility
     const [searchValue, setSearchValue] = useState('');
 
     useEffect(() => {
@@ -31,6 +33,10 @@ function Result() {
 
     const toggleSelection = () => {
         setShowSelection(!showSelection);
+    };
+
+    const toggleLeftContent = () => {
+        setShowLeftContent(!showLeftContent);
     };
 
     const accommodations = [
@@ -84,44 +90,49 @@ function Result() {
             <Header searchValue={searchValue} />
             <div className="container">
                 <div className="content">
-                    <div className="left">
-                        <div className="left-container">
-                            <div className="filter">
-                            <p className="filter">Filters</p>
-                            <p>Hide</p>
-                            </div>
-                        
-                            <br />
-                            <p className="tag">Price</p>
-                            <input
-                                type="number"
-                                placeholder="From"
-                                id="price-from"
-                                className="price-input"
-                            />
-                            <input
-                                type="number"
-                                placeholder="To"
-                                id="price-to"
-                                className="price-input"
-                            />
-                            <br /><br />
-                            <p className="tag">Property Type</p><br /><br />
-                            <p className="tag">Number of guests & rooms</p>
-                            <div>
-                                <MoreInfo />
-                            </div>
-                            <div className="submit-container">
-                                <button className="submit">Submit</button>
+                    {showLeftContent && ( 
+                        <div className="left">
+                            <div className="left-container">
+                                <div className="filter">
+                                    <p className="filter">Filters</p>
+                                    <p className='hide' onClick={toggleLeftContent}>Hide</p> 
+                                </div>
+                                <br />
+                                <p className="tag">Price</p>
+                                <input
+                                    type="number"
+                                    placeholder="From"
+                                    id="price-from"
+                                    className="price-input"
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="To"
+                                    id="price-to"
+                                    className="price-input"
+                                />
+                                <br /><br />
+                                <p className="tag">Property Type</p><br /><br />
+                                <p className="tag">Number of guests & rooms</p>
+                                <div>
+                                    <MoreInfo />
+                                </div>
+                                <div className="submit-container">
+                                    <button className="submit">Submit</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
+                    {!showLeftContent && (
+                        <div className="left-container">
+                            <p className="hide" onClick={toggleLeftContent}>Show</p>
+                        </div>
+                    )}
                     <div className="right">
                         <h2>{homestayCount} Homestay(s) Found</h2>
                         <ul className="accommodation-list">
                             {accommodations.map((accommodation) => (
                                 <li key={accommodation.id} className="accommodation-item" onClick={() => handleHomestayClick(accommodation)}>
-                                    <div className="reviews-badge">{accommodation.reviews}</div>
                                     <img
                                         src={accommodation.image}
                                         alt={accommodation.name}
@@ -129,7 +140,10 @@ function Result() {
                                     />
                                     <div className="accommodation-details">
                                         <h3 className="accommodation-name">{accommodation.name}</h3>
-                                        <p className="accommodation-address"><MapPinned/> {accommodation.address}</p>
+                                        <p className="accommodation-address"><MapPinned /> {accommodation.address}</p>
+                                    </div>
+                                    <div className='accommodation-cost'>
+                                        <div className="reviews-badge">{accommodation.reviews}</div>
                                         <p className="accommodation-price">{accommodation.price} {accommodation.currency}</p>
                                     </div>
                                 </li>

@@ -14,8 +14,8 @@
 
 .gal-container {
     display: grid;
-    grid-template-columns: 50vw 20vw 20vw;
-    gap: 10px;
+    grid-template-columns: 48.1% 25% 25%;
+    gap: 1%;
 }
 
 .item-1 {
@@ -104,7 +104,7 @@ border-radius: 30px;
     border-radius: 50%;
     border: none;
     background-color: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: white;
     font-weight: bold;
     background: transparent;
@@ -112,8 +112,8 @@ border-radius: 30px;
 }
 
 .prev-button, .next-button {
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
 }
 
 .prev-button {
@@ -126,15 +126,17 @@ border-radius: 30px;
 
 .close-button {
     top: 4%;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    right: 1.25rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 .hs-address{
+    display: flex;
+    gap: 1rem;
     margin: 0;
     color: #000;
-font-size: 16px;
+font-size: 1rem;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
@@ -142,7 +144,7 @@ line-height: normal;
 
 
 .homestay-details{
-    margin-top: 20px;
+    margin-top: 1.25rem;
     display: flex;
     justify-content: space-between;
 }
@@ -151,18 +153,18 @@ line-height: normal;
     display: flex;
     flex-direction: column;
     width: 50vw;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .homestay-slogan{
     color: #000;
 font-family: Montserrat;
-font-size: 18px;
+font-size: 1rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
-margin-bottom: 10px;
-margin-top: 10px;
+margin-bottom: 0.625rem;
+margin-top: 0.625rem;
 }
 .homestay-des{
     margin: 0;
@@ -171,7 +173,7 @@ margin-top: 10px;
     width: 55vw;
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 2.5rem;
 } 
 
 .map{
@@ -186,8 +188,8 @@ ul.advantages{
 }
 
 li.ad{
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin-bottom: 0.625rem;
+    margin-left: 0.625rem;
     padding-left: 20px;
     padding-right:20px;
     padding-top: 5px;
@@ -197,15 +199,16 @@ li.ad{
 }
 
 .details h1{
+    font-size: 2rem;
+    font-weight: bold;
     margin: 0;
 }
 .payment{
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 20vw;
     height: auto;
-    padding: 50px;
+    padding: 2rem;
     border-radius: 29px;
     background: #FFF;
     box-shadow: 0px 0px 23.8px -6px rgba(0, 0, 0, 0.25);
@@ -218,6 +221,7 @@ li.ad{
 }
 
 .cost-container .price{
+    gap: 0.25rem;
     margin: 0;
     display: flex;
     align-items: center;
@@ -234,6 +238,7 @@ font-size: 18px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+padding: 0;
 }
 
 .star {
@@ -256,6 +261,7 @@ line-height: normal;
 }
 
 button.addToCart{
+    background-color: #EBEBEB;
     border: none;
     height: 47px;
     border-radius: 11px;
@@ -274,7 +280,7 @@ line-height: normal;
     align-items: center;
     border-radius: 18px;
     border: 1.5px solid #C9C9C9;
-    height: 30vh;
+    height:60%;
     background-color: red;
     width: 100%;
     margin: auto;
@@ -285,31 +291,30 @@ line-height: normal;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 20vw;
     height: 33%;
 }
 
 .date div {
-    max-width: 30%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .date .separate {
-    width: 1px;
+    width: 0.063rem;
     height: 9vh;
     background-color: #C9C9C9;
 }
 
 label {
-    margin-bottom: 5px;
+    margin-bottom: 0.313rem;
     font-weight: bold;
 }
 
 input[type="date"] {
 
-    padding: 10px;
+    padding: 0.625rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     max-width: 100%;
@@ -335,7 +340,7 @@ hr{
     margin: 0;
     color: #000;
 font-family: Montserrat;
-font-size: 18px;
+font-size: 1.125rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -344,7 +349,7 @@ line-height: normal;
     margin: 0;
     color: #000;
 font-family: Montserrat;
-font-size: 16px;
+font-size: 1rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -372,11 +377,11 @@ line-height: normal;
     border: none;
     border-radius: 13px;
 background: #EBEBEB;
-box-shadow: 0px 0px 8.2px -10px rgba(0, 0, 0, 0.25);
+box-shadow: 0px 0px 8.2px -0.625rem rgba(0, 0, 0, 0.25);
 color: #000;
 text-align: center;
 font-family: Montserrat;
-font-size: 17px;
+font-size: 1rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -385,7 +390,7 @@ line-height: normal;
     margin: 0;
     color: #000;
 font-family: Montserrat;
-font-size: 30px;
+font-size: 1.875rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -395,7 +400,7 @@ text-decoration-line: underline;
     margin: 10px 0px 0px 0px;
     color: #000;
 font-family: Montserrat;
-font-size: 24px;
+font-size: 1.5rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;;
@@ -404,8 +409,46 @@ line-height: normal;;
     margin-top: 0;
     color: #000;
 font-family: Montserrat;
-font-size: 18px;
+font-size: 1rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+}
+
+@media (max-width: 1024px) {
+    .homestay-details{
+        flex-direction: column;
+    }
+    .payment{
+        width: 100%;
+    }
+    .details{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+    .date{
+        width: 100%;
+    }
+    .option{
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+    .contact-container{
+        flex-wrap: wrap;
+    }
+    .send-messages{
+        height: 3rem;
+    }
+    .link-contact{
+
+        align-items: flex-start;
+    }
+    .contact-container{
+        gap: 1rem;
+    }
+    .gal-container{
+        margin-top: 2rem;
+    }
 }

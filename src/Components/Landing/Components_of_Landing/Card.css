@@ -14,9 +14,8 @@
 .Card p.name {
     font-weight: bold;
     color: #3C6553;
-    font-size: 14px;
+    font-size: 0.875rem;
+    height: 2.5rem;
 }
 
-.Card p.name-title {
-    margin-bottom: 20px;
-}
+
