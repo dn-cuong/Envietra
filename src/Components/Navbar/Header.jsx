@@ -36,8 +36,8 @@ function Header() {
     };
 
     const handleClick = () => {
-        if (!check) {
-            alert('Chưa đăng nhập');
+        if (localStorage.getItem("bookedHomestays")) {
+            window.location.href = "/manage_booking";
         }
     };
 
