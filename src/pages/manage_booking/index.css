@@ -1,18 +1,21 @@
-
 #root{
     background-color: #f5f5f5;
 }
 
-.manage_booking_container   {
+.manage_booking_container {
     padding: 0.5rem;
     height: 100vh;
+    width: 90%;
+    margin: auto;
 }
-.booked_homestays_container{
+
+.booked_homestays_container {
     display: flex;
     gap: 1rem;
     flex-direction: column;
 }
-.item{
+
+.item {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -23,52 +26,58 @@
     border-radius: 30px;
 }
 
-.item img{
+.item img {
     width: 15rem;
     height: 100%;
     border-radius: 30px;
 }
 
-.info_homestay{
+.info_homestay {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.detail{
+.detail {
     flex:1;
 }
-.details_container{
+
+.details_container {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.line{
+
+.line {
     width: 1px;
     height: auto;
     background-color: black;
-
 }
-.top_section .container{
+
+.top_section .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.bottom_section{
+
+.bottom_section {
     display: flex;
     justify-content: space-between;
 }
-.container .subject{
+
+.container .subject {
     font-size: 1rem;
     font-weight: bold;
 }
-.hour{
+
+.hour {
     color: #E76D6D;
     font-weight: bold;
     font-size: 1.25rem;
 }
-.cancel{
+
+.cancel {
     padding: 0.5rem 1rem;
     background-color: #3C6553;
     font-family: Montserrat;
@@ -76,23 +85,58 @@
     border-radius: 1.5rem;
     font-weight: bold;
 }
-.price_info{
+
+.price_info {
     font-size: 1.15rem;
     color: #3C6553;
     font-weight: bold;
 }
 
+.control {
+    padding: 0.25rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+    border-radius: 92px;
+    background: #FEFEFE;
+    box-shadow: 0px 2px 5.2px 1px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+}
+
+.control .child {
+    height: auto;
+    display: inline-block;
+    width: 33%;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    text-align: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.control .child.active {
+    background-color: #3C6553;
+    border-radius: 59px;
+    color: white;
+}
+
 @media (max-width: 1300px) {
-    .line{
+    .control{
+        display: inline-block;
+    }
+    .line {
         display: none;
     }
 }
 
 @media (max-width: 800px) {
-    .line{
+    .line {
         display: none;
     }
-    .item img{
+    .item img {
         width: 100%;
     }
 }
