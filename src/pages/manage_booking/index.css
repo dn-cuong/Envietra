@@ -1,142 +1,137 @@
-#root{
-    background-color: #f5f5f5;
+#root {
+  background-color: #f5f5f5;
 }
 
 .manage_booking_container {
-    padding: 0.5rem;
-    height: 100vh;
-    width: 90%;
-    margin: auto;
+  padding: 0.5rem;
+  height: 100vh;
+  width: 90%;
+  margin: auto;
 }
 
 .booked_homestays_container {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 .item {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    gap: 1rem;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 30px;
 }
 
 .item img {
-    width: 15rem;
-    height: 100%;
-    border-radius: 30px;
+  width: 15rem;
+  height: 100%;
+  border-radius: 30px;
 }
 
 .info_homestay {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .detail {
-    flex:1;
+  flex: 1;
 }
 
 .details_container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .line {
-    width: 1px;
-    height: auto;
-    background-color: black;
+  width: 1px;
+  height: auto;
+  background-color: black;
 }
 
 .top_section .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .bottom_section {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .container .subject {
-    font-size: 1rem;
-    font-weight: bold;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .hour {
-    color: #E76D6D;
-    font-weight: bold;
-    font-size: 1.25rem;
+  color: #e76d6d;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .cancel {
-    padding: 0.5rem 1rem;
-    background-color: #3C6553;
-    font-family: Montserrat;
-    color: white;
-    border-radius: 1.5rem;
-    font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: #3c6553;
+  font-family: Montserrat;
+  color: white;
+  border-radius: 1.5rem;
+  font-weight: bold;
 }
 
 .price_info {
-    font-size: 1.15rem;
-    color: #3C6553;
-    font-weight: bold;
+  font-size: 1.15rem;
+  color: #3c6553;
+  font-weight: bold;
 }
 
-.control {
-    padding: 0.25rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    height: auto;
-    border-radius: 92px;
-    background: #FEFEFE;
-    box-shadow: 0px 2px 5.2px 1px rgba(0, 0, 0, 0.25);
-    align-items: center;
-    justify-content: center;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.control .child {
-    height: auto;
-    display: inline-block;
-    width: 33%;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    text-align: center;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
+.dropbtn {
+  background-color: #3c6553;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.control .child.active {
-    background-color: #3C6553;
-    border-radius: 59px;
-    color: white;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
 }
 
-@media (max-width: 1300px) {
-    .control{
-        display: inline-block;
-    }
-    .line {
-        display: none;
-    }
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-@media (max-width: 800px) {
-    .line {
-        display: none;
-    }
-    .item img {
-        width: 100%;
-    }
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .dropdown-content {
+    display: none;
+  }
 }
