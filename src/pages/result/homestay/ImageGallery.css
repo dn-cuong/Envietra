@@ -414,10 +414,27 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
+.hidden_container{
+    z-index: 1  ;
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 2rem;
+    right: 7rem;
+    box-shadow: 0px 0px 23.8px -6px rgba(0, 0, 0, 0.25);
 
+}
 @media (max-width: 1024px) {
     .homestay-details{
         flex-direction: column;
+    }
+    .hidden_container{
+        position: absolute;
+        left: 5%;
+        width: 85vw;
+        height: auto;
     }
     .payment{
         width: 100%;

@@ -6,6 +6,13 @@ import { MapPinned } from 'lucide-react';
 function ManageBooking() {
     const [homestays, setHomestays] = useState([]);
     const [activeTab, setActiveTab] = useState("Pending");
+    const [isDropdown, setIsDropdown] = useState(window.innerWidth <= 1100);
+
+    useEffect(() => {
+        const handleResize = () => setIsDropdown(window.innerWidth <= 1100);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         const storedHomestays = JSON.parse(localStorage.getItem("bookedHomestays")) || [];
@@ -73,17 +80,25 @@ function ManageBooking() {
     return (
         <div className="manage_booking_container">
             <Header />
-            <ul className="control">
-                {["Pending", "Confirmed", "Ongoing trip", "Mission Completed", "Booking cancel"].map((tab) => (
-                    <li
-                        key={tab}
-                        className={`child ${activeTab === tab ? "active" : ""}`}
-                        onClick={() => handleTabClick(tab)}
-                    >
-                        {tab}
-                    </li>
-                ))}
-            </ul>
+            {isDropdown ? (
+                <select className="control_dropdown" value={activeTab} onChange={(e) => handleTabClick(e.target.value)}>
+                    {["Pending", "Confirmed", "Ongoing trip", "Mission Completed", "Booking cancel"].map((tab) => (
+                        <option key={tab} value={tab} className="op">{tab}</option>
+                    ))}
+                </select>
+            ) : (
+                <ul className="control">
+                    {["Pending", "Confirmed", "Ongoing trip", "Mission Completed", "Booking cancel"].map((tab) => (
+                        <li
+                            key={tab}
+                            className={`child ${activeTab === tab ? "active" : ""}`}
+                            onClick={() => handleTabClick(tab)}
+                        >
+                            {tab}
+                        </li>
+                    ))}
+                </ul>
+            )}
             {filteredHomestays.length > 0 && (
                 <div className="list_homestays">
                     <ul className="booked_homestays_container">
@@ -110,7 +125,7 @@ function ManageBooking() {
                                             </div>
                                             <div className="container">
                                                 <div className="subject">Guests - Rooms</div>
-                                                <div>8 people 3 rooms</div>
+                                                <div>{homestay.people} people {homestay.rooms} rooms</div>
                                             </div>
                                             <div className="container">
                                                 <div className="subject">Service Pack</div>

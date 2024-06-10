@@ -10,12 +10,24 @@ function ImageGallery() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showGallery, setShowGallery] = useState(false);
     const [selectedHomestay, setSelectedHomestay] = useState(null);
-    const [rooms, setRooms] = useState(1);
-    const [people, setPeople] = useState(1);
-    const [children, setChildren] = useState(0);
     const [showSelection, setShowSelection] = useState(false);
     const [checkInDate, setCheckInDate] = useState('');
     const [checkOutDate, setCheckOutDate] = useState('');
+    const [rooms, setRooms] = useState(1);
+    const [people, setPeople] = useState(1);
+    const [children, setChildren] = useState(0);
+
+    const handleRoomsChange = (delta) => {
+        setRooms((prevRooms) => Math.max(1, prevRooms + delta));
+    };
+
+    const handlePeopleChange = (delta) => {
+        setPeople((prevPeople) => Math.max(1, prevPeople + delta));
+    };
+
+    const handleChildrenChange = (delta) => {
+        setChildren((prevChildren) => Math.max(0, prevChildren + delta));
+    };
 
     useEffect(() => {
         const selectedHomestayId = localStorage.getItem('selectedHomestayId');
@@ -57,7 +69,9 @@ function ImageGallery() {
             const homestayWithDates = {
                 ...selectedHomestay,
                 checkInDate: checkInDate,
-                checkOutDate: checkOutDate
+                checkOutDate: checkOutDate,
+                people: people,
+                rooms: rooms
             };
             bookedHomestays.push(homestayWithDates);
             localStorage.setItem('bookedHomestays', JSON.stringify(bookedHomestays));
@@ -65,6 +79,7 @@ function ImageGallery() {
             alert('Homestay booked successfully!');
         }
     };
+    
 
     const handleCheckInDateChange = (e) => {
         const date = e.target.value;
@@ -114,6 +129,7 @@ function ImageGallery() {
 Những dịp lễ như này là thời gian hoàn hảo để dành cho gia đình, tận hưởng thời gian nghỉ dưỡng với không gian đầy đủ tiện ích tại Dream Hill
 Không lo nắng nóng vì không gian bao quanh bởi núi rừng nhưng lại ngay gần Hà Nội (chỉ 40 phút đi đường), đảm bảo đầy đủ tiện ích cho cả gia đình</p>
                         </div>
+                        
                         <div className="payment">
                             <div className="cost-container">
                                 <div className='price'>
@@ -135,15 +151,59 @@ Không lo nắng nóng vì không gian bao quanh bởi núi rừng nhưng lại 
                                     </div>
                                 </div>
                                 <hr />
-                                <div className='number'>
+                                <div className='number'  >
                                     <p className='title'>Guests & rooms <ChevronDown size={25}/></p>
-                                    <div className='option-container'>
-                                        <p onClick={toggleSelection}>
+                                    
+                                    <div className='option-container' >
+                                        <p onClick={toggleSelection} style={{cursor: "pointer"}}>
                                             {rooms} rooms, {people+children} people
+                                            
                                         </p>
+                                        {showSelection && (
+                                            <div className='hidden_container'>
+                                                <div className="input-container">
+                        <div className="input-label">
+                            <label htmlFor="rooms">Rooms</label>
+                        </div>
+                        <div className="input-controls">
+                            <button onClick={() => handleRoomsChange(-1)}>-</button>
+                            <input type="number" id="rooms" value={rooms} readOnly />
+                            <button onClick={() => handleRoomsChange(1)}>+</button>
+                        </div>
+                    </div>
+
+                    <div className="input-container">
+                        <div className="input-label">
+                            <label htmlFor="people">Adults</label>
+                            <span>Ages 18 or above</span>
+                        </div>
+                        <div className="input-controls">
+                            <button onClick={() => handlePeopleChange(-1)}>-</button>
+                            <input type="number" id="people" value={people} readOnly />
+                            <button onClick={() => handlePeopleChange(1)}>+</button>
+                        </div>
+                    </div>
+
+                    <div className="input-container">
+                        <div className="input-label">
+                            <label htmlFor="children">Children</label>
+                            <span>Ages 0-17</span>
+                        </div>
+                        <div className="input-controls">
+                            <button onClick={() => handleChildrenChange(-1)}>-</button>
+                            <input type="number" id="children" value={children} readOnly />
+                            <button onClick={() => handleChildrenChange(1)}>+</button>
+                        </div>
+                    </div>    
+                                            </div>
+                                         )}
+                                        
+                                        
                                     </div>
+                                    
                                 </div>
                                 <hr />
+                                
                                 <div className='number'>
                                     <p className='title'>Service Pack <ChevronDown size={25}/></p>
                                     <div className='option-container'>

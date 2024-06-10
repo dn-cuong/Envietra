@@ -1,141 +1,159 @@
 #root {
-  background-color: #f5f5f5;
-}
-
-.manage_booking_container {
-  padding: 0.5rem;
-  height: 100vh;
-  width: 90%;
-  margin: auto;
-}
-
-.booked_homestays_container {
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-}
-
-.item {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-  gap: 1rem;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 30px;
-
-}
-
-.item img {
-  width: 15rem;
-  height: 100%;
-  border-radius: 30px;
-}
-
-.info_homestay {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.detail {
-  flex: 1;
-}
-
-.details_container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.line {
-  width: 1px;
-  height: auto;
-  background-color: black;
-}
-
-.top_section .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.bottom_section {
-  display: flex;
-  justify-content: space-between;
-}
-
-.container .subject {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.hour {
-  color: #e76d6d;
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-
-.cancel {
-  padding: 0.5rem 1rem;
-  background-color: #3c6553;
-  font-family: Montserrat;
-  color: white;
-  border-radius: 1.5rem;
-  font-weight: bold;
-}
-
-.price_info {
-  font-size: 1.15rem;
-  color: #3c6553;
-  font-weight: bold;
-}
-
-.control {
+    background-color: #f5f5f5;
+  }
+  
+  .manage_booking_container {
+    padding: 0.5rem;
+    height: 100vh;
+    width: 90%;
+    margin: auto;
+  }
+  
+  .booked_homestays_container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  
+  .item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 30px;
+  }
+  
+  .item img {
+    width: 15rem;
+    height: 100%;
+    border-radius: 30px;
+  }
+  
+  .info_homestay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .detail {
+    flex: 1;
+  }
+  
+  .details_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .line {
+    width: 1px;
+    height: auto;
+    background-color: black;
+  }
+  
+  .top_section .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .bottom_section {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container .subject {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .hour {
+    color: #e76d6d;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  
+  .cancel {
+    padding: 0.5rem 1rem;
+    background-color: #3c6553;
+    font-family: Montserrat;
+    color: white;
+    border-radius: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .price_info {
+    font-size: 1.15rem;
+    color: #3c6553;
+    font-weight: bold;
+  }
+  
+  .control {
     margin-bottom: 1rem;
-  display: flex;
-  background-color: white;
-  border-radius: 59px;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 0.5rem 0rem;
-  justify-content: space-evenly;
-  box-shadow: 0px 2px 5.2px 1px rgba(0, 0, 0, 0.25);
-}
-.control .child{
+    display: flex;
+    background-color: white;
+    border-radius: 59px;
+    width: 100%;
+    padding: 0.5rem ;
+    justify-content: space-between;
+    box-shadow: 0px 2px 5.2px 1px rgba(0, 0, 0, 0.25);
+  }
+  
+  .control .child {
+    padding: 1rem;
     width: 16rem;
     text-align: center;
     border-radius: 59px;
     cursor: pointer;
     color: #000;
-text-align: center;
-font-family: Montserrat;
-font-size: 1rem;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-}
-.control .child.active{
-    background-color: #3c6553;
-    color: #FFF;
     text-align: center;
     font-family: Montserrat;
     font-size: 1rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-}
-
-
-
-
-@media (max-width: 1100px) {
-  .line{
-    display: none;
   }
-  .item img{
+  
+  .control .child.active {
+    background-color: #3c6553;
+    color: #fff;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .control_dropdown {
+    margin-bottom: 1rem;
     width: 100%;
+    padding: 0.5rem;
+    border-radius: 59px;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: normal;
+    box-shadow: 0px 2px 5.2px 1px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    border: none;
   }
-}
+  .control_dropdown .op{
+    background-color: white;
+  }
+  @media (max-width: 1100px) {
+    .control {
+      display: none;
+    }
+    .line {
+      display: none;
+    }
+    .item img {
+      width: 100%;
+    }
+  }
+  

@@ -5,10 +5,7 @@ import MoreInfo from '../result/myComponent';
 import { MapPinned } from 'lucide-react';
 
 function Result() {
-    const [rooms, setRooms] = useState(1);
-    const [people, setPeople] = useState(1);
-    const [children, setChildren] = useState(0);
-    const [showSelection, setShowSelection] = useState(false);
+
     const [showLeftContent, setShowLeftContent] = useState(true); // New state for left content visibility
     const [searchValue, setSearchValue] = useState('');
 
@@ -19,21 +16,6 @@ function Result() {
         }
     }, []);
 
-    const handleRoomsChange = (delta) => {
-        setRooms((prevRooms) => Math.max(1, prevRooms + delta));
-    };
-
-    const handlePeopleChange = (delta) => {
-        setPeople((prevPeople) => Math.max(1, prevPeople + delta));
-    };
-
-    const handleChildrenChange = (delta) => {
-        setChildren((prevChildren) => Math.max(0, prevChildren + delta));
-    };
-
-    const toggleSelection = () => {
-        setShowSelection(!showSelection);
-    };
 
     const toggleLeftContent = () => {
         setShowLeftContent(!showLeftContent);
