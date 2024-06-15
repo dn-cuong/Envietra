@@ -1,13 +1,34 @@
-import { useState, useEffect } from 'react';
-import './Result.css';
-import Header from '../../Components/Navbar/Header';
-import MoreInfo from '../result/myComponent';
-import { MapPinned } from 'lucide-react';
+import { useEffect, useMemo, useState } from "react";
+import { MapPinned } from "lucide-react";
+import { useQuery } from "react-query";
+import { useLocation } from "react-router";
+
+import { fetchSearch } from "../../api/search.js";
+import Header from "../../Components/Navbar/Header";
+import MoreInfo from "../result/myComponent";
+
+import "./Result.css";
+
+function useSearchQuery() {
+    const { search } = useLocation();
+
+    return useMemo(() => new URLSearchParams(search), [ search ]);
+}
 
 function Result() {
 
-    const [showLeftContent, setShowLeftContent] = useState(true); // New state for left content visibility
-    const [searchValue, setSearchValue] = useState('');
+    const query = useSearchQuery().get("q");
+
+    const { isSuccess, data } = useQuery({
+        queryKey: [ "search", query ], queryFn: () => fetchSearch(query)
+    });
+    // const [rooms, setRooms] = useState(1);
+    // const [people, setPeople] = useState(1);
+    // const [children, setChildren] = useState(0);
+    // const [showSelection, setShowSelection] = useState(false);
+    const [ showLeftContent, setShowLeftContent ] = useState(true); // New state for left content visibility
+    const [ searchValue, setSearchValue ] = useState("");
+
 
     useEffect(() => {
         const storedSearchValue = localStorage.getItem('searchValue');
@@ -16,126 +37,107 @@ function Result() {
         }
     }, []);
 
+    useEffect(() => {
+        if (isSuccess) {
+            const homestayQueryResult = data.data.hits.hits;
+            console.log(homestayQueryResult);
+        }
+    }, [ isSuccess ]);
 
     const toggleLeftContent = () => {
         setShowLeftContent(!showLeftContent);
     };
 
-    const accommodations = [
-        {
-            id: 1,
-            image: "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/398621948_169702546214120_6427517112403794095_n.jpg?_nc_cat=111&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHtfvceTT2BgjCgMi3CxAyjCyv5z_1F8gELK_nP_UXyAaUyGmfvcdYoyjYq_SUT4qJ-UcQRr8Z5SQJaSuqzulfu&_nc_ohc=xoeA7aD0tC0Q7kNvgFwowuu&_nc_ht=scontent.fhan5-10.fna&oh=00_AYCB25EPhg0UWr0Em3gafd1MrIDxRFGkRZ1A8xO-s1Tamg&oe=664EA96B",
-            name: "Dream Hill - Sườn đồi mộng mơ",
-            address: "Ngõ Suối, thôn Đồng Bồ, xã Đông Xuân, h.Quốc Oai, Hà Nội",
-            price: "200.000",
-            currency: "₫",
-            reviews: "⭐ 4.5",
-        },
-        {
-            id: 2,
-            image: "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/398621948_169702546214120_6427517112403794095_n.jpg?_nc_cat=111&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHtfvceTT2BgjCgMi3CxAyjCyv5z_1F8gELK_nP_UXyAaUyGmfvcdYoyjYq_SUT4qJ-UcQRr8Z5SQJaSuqzulfu&_nc_ohc=xoeA7aD0tC0Q7kNvgFwowuu&_nc_ht=scontent.fhan5-10.fna&oh=00_AYCB25EPhg0UWr0Em3gafd1MrIDxRFGkRZ1A8xO-s1Tamg&oe=664EA96B",
-            name: "Dream  - Sườn đồi mộng mơ",
-            address: "Ngõ Suối, thôn Đồng Bồ, xã Đông Xuân, h.Quốc Oai, Hà Nội",
-            price: "100.000",
-            currency: "₫",
-            reviews: "⭐ 4.5",
-        },
-        {
-            id: 3,
-            image: "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/398621948_169702546214120_6427517112403794095_n.jpg?_nc_cat=111&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHtfvceTT2BgjCgMi3CxAyjCyv5z_1F8gELK_nP_UXyAaUyGmfvcdYoyjYq_SUT4qJ-UcQRr8Z5SQJaSuqzulfu&_nc_ohc=xoeA7aD0tC0Q7kNvgFwowuu&_nc_ht=scontent.fhan5-10.fna&oh=00_AYCB25EPhg0UWr0Em3gafd1MrIDxRFGkRZ1A8xO-s1Tamg&oe=664EA96B",
-            name: "Dream Hill - Sườn đồi mộng mơ",
-            address: "Ngõ Suối, thôn Đồng Bồ, xã Đông Xuân, h.Quốc Oai, Hà Nội",
-            price: "200.000",
-            currency: "₫",
-            reviews: "⭐ 4.5",
-        },
-        {
-            id: 4,
-            image: "https://scontent.fhan5-10.fna.fbcdn.net/v/t39.30808-6/398621948_169702546214120_6427517112403794095_n.jpg?_nc_cat=111&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHtfvceTT2BgjCgMi3CxAyjCyv5z_1F8gELK_nP_UXyAaUyGmfvcdYoyjYq_SUT4qJ-UcQRr8Z5SQJaSuqzulfu&_nc_ohc=xoeA7aD0tC0Q7kNvgFwowuu&_nc_ht=scontent.fhan5-10.fna&oh=00_AYCB25EPhg0UWr0Em3gafd1MrIDxRFGkRZ1A8xO-s1Tamg&oe=664EA96B",
-            name: "Hill - Sườn đồi mộng mơ",
-            address: "Ngõ Suối, thôn Đồng Bồ, xã Đông Xuân, h.Quốc Oai, Hà Nội",
-            price: "200.000",
-            currency: "₫",
-            reviews: "⭐ 4.5",
-        },
-    ];
-
-    const homestayCount = accommodations.length;
-
     const handleHomestayClick = (homestay) => {
-        localStorage.setItem('selectedHomestayId', homestay.id);
-        window.location.href = `/result/homestay?id=${homestay.id}`;
+        window.location.href = `/result/homestay?id=${homestay}`;
     };
+    if (!isSuccess) return <></>;
+    else {
+        const homestayQueryResult = data.data.hits.hits;
+        const homestayCount = homestayQueryResult.length;
 
-    return (
-        <>
-            <Header searchValue={searchValue} />
-            <div className="container">
-                <div className="content">
-                    {showLeftContent && ( 
-                        <div className="left">
-                            <div className="left-container">
-                                <div className="filter">
-                                    <p className="filter">Filters</p>
-                                    <p className='hide' onClick={toggleLeftContent}>Hide</p> 
-                                </div>
-                                <br />
-                                <p className="tag">Price</p>
-                                <input
-                                    type="number"
-                                    placeholder="From"
-                                    id="price-from"
-                                    className="price-input"
-                                />
-                                <input
-                                    type="number"
-                                    placeholder="To"
-                                    id="price-to"
-                                    className="price-input"
-                                />
-                                <br /><br />
-                                <p className="tag">Property Type</p><br /><br />
-                                <p className="tag">Number of guests & rooms</p>
-                                <div>
-                                    <MoreInfo />
-                                </div>
-                                <div className="submit-container">
-                                    <button className="submit">Submit</button>
+        return (
+            <>
+                <Header searchValue={searchValue}/>
+                <div className="container">
+                    <div className="content">
+                        {showLeftContent && (
+                            <div className="left">
+                                <div className="left-container">
+                                    <div className="filter">
+                                        <p className="filter">Filters</p>
+                                        <p className="hide" onClick={toggleLeftContent}>Hide</p>
+                                    </div>
+                                    <br/>
+                                    <p className="tag">Price</p>
+                                    <input
+                                        type="number"
+                                        placeholder="From"
+                                        id="price-from"
+                                        className="price-input"
+                                    />
+                                    <input
+                                        type="number"
+                                        placeholder="To"
+                                        id="price-to"
+                                        className="price-input"
+                                    />
+                                    <br/><br/>
+                                    <p className="tag">Property Type</p><br/><br/>
+                                    <p className="tag">Number of guests & rooms</p>
+                                    <div>
+                                        <MoreInfo/>
+                                    </div>
+                                    <div className="submit-container">
+                                        <button className="submit">Submit</button>
+                                    </div>
                                 </div>
                             </div>
+                        )}
+                        {!showLeftContent && (
+                            <div className="left-container">
+                                <p className="hide" onClick={toggleLeftContent}>Show</p>
+                            </div>
+                        )}
+                        <div className="right">
+                            <h2>{homestayCount} Homestay(s) Found</h2>
+                            <ul className="accommodation-list">
+                                {homestayQueryResult.map((homestay) => {
+                                        const {
+                                            hotel_districts_hotel_infomation_provinces_wards_hotel_id: homestay_id,
+                                            hotel_districts_hotel_infomation_provinces_wards_hotel_name: homestay_name,
+                                            hotel_districts_hotel_infomation_provinces_wards_hotel_location: homestay_location
+                                        } = homestay._source;
+                                        return (
+                                            <li key={homestay_id} className="accommodation-item"
+                                                onClick={() => handleHomestayClick(homestay_id)}>
+                                                <img
+                                                    src={""}
+                                                    alt={homestay_name}
+                                                    className="accommodation-image"
+                                                />
+                                                <div className="accommodation-details">
+                                                    <h3 className="accommodation-name">{homestay_name}</h3>
+                                                    <p className="accommodation-address">
+                                                        <MapPinned/> {homestay_location}
+                                                    </p>
+                                                </div>
+                                                <div className="accommodation-cost">
+                                                    <div
+                                                        className="reviews-badge">⭐ {5}</div>
+                                                    <p className="accommodation-price">{5} {"vnd"}</p>
+                                                </div>
+                                            </li>
+                                        );
+                                    }
+                                )}
+                            </ul>
                         </div>
-                    )}
-                    {!showLeftContent && (
-                        <div className="left-container">
-                            <p className="hide" onClick={toggleLeftContent}>Show</p>
-                        </div>
-                    )}
-                    <div className="right">
-                        <h2>{homestayCount} Homestay(s) Found</h2>
-                        <ul className="accommodation-list">
-                            {accommodations.map((accommodation) => (
-                                <li key={accommodation.id} className="accommodation-item" onClick={() => handleHomestayClick(accommodation)}>
-                                    <img
-                                        src={accommodation.image}
-                                        alt={accommodation.name}
-                                        className="accommodation-image"
-                                    />
-                                    <div className="accommodation-details">
-                                        <h3 className="accommodation-name">{accommodation.name}</h3>
-                                        <p className="accommodation-address"><MapPinned /> {accommodation.address}</p>
-                                    </div>
-                                    <div className='accommodation-cost'>
-                                        <div className="reviews-badge">{accommodation.reviews}</div>
-                                        <p className="accommodation-price">{accommodation.price} {accommodation.currency}</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </>
-    );
+            </>
+        );
+    }
 }
 
 export default Result;

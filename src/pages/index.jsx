@@ -1,66 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { CircleCheck, CircleCheckBig, CalendarDays, Home } from "lucide-react";
+
+import cardsData from "./login/cardData.js";
 import Header from "../Components/Navbar/Header.jsx";
-import "../pages/Landing.css";
 import AboutUs from "../Components/Landing/Components_of_Landing/AboutUs.jsx";
+
+import "../pages/Landing.css";
 
 function Landing() {
     const [check, setCheck] = useState(false);
     const [isBooked, setIsBooked] = useState(false);
     const [bookedHomestay, setBookedHomestay] = useState(null);
-    const [displayCalendar, setdisplayCalendar] = useState(false);
-    const [displayLocation, setdisplayLocation] = useState(false);
+    const [displayCalendar, setDisplayCalendar] = useState(false);
+    const [displayLocation, setDisplayLocation] = useState(false);
 
     const display = () => {
-        setdisplayCalendar(!displayCalendar);
+        setDisplayCalendar(!displayCalendar);
     };
 
     const location = () => {
-        setdisplayLocation(!displayLocation);
+        setDisplayLocation(!displayLocation);
     };
 
-    useEffect(() => {
-        const bookedHomestays = localStorage.getItem("bookedHomestays");
-        if (bookedHomestays) {
-            const parsedBookedHomestays = JSON.parse(bookedHomestays);
-            if (
-                Array.isArray(parsedBookedHomestays) &&
-                parsedBookedHomestays.length > 0
-            ) {
-                const lastBookedHomestay =
-                    parsedBookedHomestays[parsedBookedHomestays.length - 1];
-                setBookedHomestay(lastBookedHomestay); 
-                setIsBooked(true);
-            }
-        }
-    }, []);
+    // useEffect(() => {
+    //     const bookedHomestays = localStorage.getItem("bookedHomestays");
+    //     if (bookedHomestays) {
+    //         const parsedBookedHomestays = JSON.parse(bookedHomestays);
+    //         if (
+    //             Array.isArray(parsedBookedHomestays) &&
+    //             parsedBookedHomestays.length > 0
+    //         ) {
+    //             const lastBookedHomestay =
+    //                 parsedBookedHomestays[parsedBookedHomestays.length - 1];
+    //             setBookedHomestay(lastBookedHomestay);
+    //             setIsBooked(true);
+    //         }
+    //     }
+    // }, []);
 
     const handleClick = () => {
         if (!check) {
             window.location.href = "/login";
         }
     };
-
-    const cardsData = [
-        {
-            id: 1,
-            name: "Dream Hill, Hanoi",
-            image:
-                "https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/397442446_169702509547457_8442301666497253645_n.jpg?_nc_cat=108&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFQzar32SymMW0nJ5a33OFo1PCVVXgCmj_U8JVVeAKaP3Px4_wA0zNquyoallpgQZIStV5uy3EtdFK0Rrb8t396&_nc_ohc=F3ulsA3hffgQ7kNvgFRIye9&_nc_ht=scontent.fhan5-8.fna&oh=00_AYCw2DieGa66WJ_CjwL1JtZtVSU5Yidq25qWw6tJK_naVA&oe=664DC4D7",
-        },
-        {
-            id: 2,
-            name: "Dream Hill, Hanoi",
-            image:
-                "https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/397442446_169702509547457_8442301666497253645_n.jpg?_nc_cat=108&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFQzar32SymMW0nJ5a33OFo1PCVVXgCmj_U8JVVeAKaP3Px4_wA0zNquyoallpgQZIStV5uy3EtdFK0Rrb8t396&_nc_ohc=F3ulsA3hffgQ7kNvgFRIye9&_nc_ht=scontent.fhan5-8.fna&oh=00_AYCw2DieGa66WJ_CjwL1JtZtVSU5Yidq25qWw6tJK_naVA&oe=664DC4D7",
-        },
-        {
-            id: 3,
-            name: "Dream Hill, Hanoi",
-            image:
-                "https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/397442446_169702509547457_8442301666497253645_n.jpg?_nc_cat=108&_nc_cb=99be929b-2300bf0b&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFQzar32SymMW0nJ5a33OFo1PCVVXgCmj_U8JVVeAKaP3Px4_wA0zNquyoallpgQZIStV5uy3EtdFK0Rrb8t396&_nc_ohc=F3ulsA3hffgQ7kNvgFRIye9&_nc_ht=scontent.fhan5-8.fna&oh=00_AYCw2DieGa66WJ_CjwL1JtZtVSU5Yidq25qWw6tJK_naVA&oe=664DC4D7",
-        },
-    ];
 
     const change = () => {
         const aboutUsElement = document.getElementById("aboutus");

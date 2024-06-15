@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Header from "../../Components/Navbar/Header";
-import "../manage_booking/index.css";
 import { MapPinned } from 'lucide-react';
+
+import "../manage_booking/index.css";
 
 function ManageBooking() {
     const [homestays, setHomestays] = useState([]);
